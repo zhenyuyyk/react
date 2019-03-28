@@ -10,7 +10,6 @@ import Footer from "../components/footer/footer";
 
 const BasicRoute = () => (
     <BrowserRouter>
-        <Switch>
             <div>
                 <Header />
                 <div>
@@ -26,15 +25,16 @@ const BasicRoute = () => (
                         </li>
                     </ul>
                     <div>
-						变化区域↓
-                        <Route exact path="/" component={Index} />
-                        <Route exact path="/details" component={Details} />
-                        <Route exact path="/login" component={Login} />
+                        <div>变化区域↓</div>
+                        <Switch>
+                            <Route exact path="/" component={Index} />
+                            <Route exact path="/details" component={Details} />
+                            <Route exact path="/login" component={Login} />
+                        </Switch>
                     </div>
                 </div>
                 <Footer />
             </div>
-        </Switch>
     </BrowserRouter>
 );
 
