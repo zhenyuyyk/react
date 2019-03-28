@@ -1,9 +1,6 @@
 import React, {
     Component
 } from 'react';
-import Header from "../components/header/header"
-import Footer from "../components/footer/footer"
-import { Link } from 'react-router-dom'
 
 class index extends Component {
     //构造函数
@@ -24,16 +21,7 @@ class index extends Component {
     render() {
         return(
             <div>
-                <Header />
-                <div>
-                    <ul>
-                        <li>
-                        </li>
-						<li>
-						</li>
-                    </ul>
-                </div>
-                <Footer />
+               index
             </div>
         );
     }
