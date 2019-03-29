@@ -27,6 +27,7 @@ class login extends Component {
         console.log(e)
         console.log(id)
         console.log(this.state)
+        this.props.history.push("/");
     }
 
     inputChange = (e) => {

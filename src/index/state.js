@@ -1,7 +1,6 @@
 import React, {
     Component
 } from 'react';
-import httpServer from '../server/api'
 
 class state extends Component {
     //构造函数
