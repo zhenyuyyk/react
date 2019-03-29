@@ -9,7 +9,7 @@ import Login from "../login/login"
 import NotFound from "../notFound/notFound"
 // import Header from "../components/header/header";
 // import Footer from "../components/footer/footer";
-import '~antd/dist/antd.css';
+import "antd/dist/antd.css";
 
 class BasicRoute extends Component {
     //构造函数
