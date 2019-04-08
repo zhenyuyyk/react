@@ -8,12 +8,13 @@ class details extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list:[]
+            list: []
         };
     }
+
     //挂载
     componentDidMount() {
-        var _this=this
+        var _this = this
         httpServer.list().then(function (res) {
             console.log(res.data)
             _this.setState({
@@ -21,12 +22,22 @@ class details extends Component {
             })
         })
     }
+
     //卸载
     componentWillUnmount() {
 
     }
+
+    getPhoto = (e) => {
+        e.preventDefault();
+        console.log(
+            `Selected file - ${this.fileInput.files[0].name}`
+        );
+        console.log(this.fileInput.files[0]) //传值参数
+    }
+
     render() {
-        const listArray=this.state.list.map((item,index)=>
+        const listArray = this.state.list.map((item, index) =>
             <ul key={item.id}>
                 <li>index:{index}</li>
                 <li>{item.id}</li>
@@ -34,8 +45,13 @@ class details extends Component {
                 <li>{item.value}</li>
             </ul>
         )
-        return(
+        return (
             <div>
+                <input type="file" ref={input => {
+                    this.fileInput = input;
+                }}
+                />
+                <button onClick={(e) => this.getPhoto(e)}>获取图片信息</button>
                 {listArray}
             </div>
         );

@@ -1,22 +1,8 @@
-import { createStore } from "redux";
-const tiger = 10000
+import {createStore} from 'redux';
+import counter  from './reducers/counter';
+import {combineReducers} from "redux";
 
-// //这是action
-// const increase = {
-//     type: '涨工资'
-// }
-// const decrease = {
-//     type: '扣工资'
-// }
-//这是reducer
-const reducer = (state = tiger, action) => {
-    switch (action.type) {
-        case '涨工资':
-            return state += 100;
-        case '扣工资':
-            return state -= 100;
-        default:
-            return state;
-    }
-}
-export default createStore(reducer);
+let store = createStore(combineReducers({counter}));
+
+export default store;
+

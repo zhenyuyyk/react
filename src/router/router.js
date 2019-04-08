@@ -7,8 +7,10 @@ import State from "../index/state"
 import Details from "../details/details"
 import Login from "../login/login"
 import NotFound from "../notFound/notFound"
-// import Header from "../components/header/header";
-// import Footer from "../components/footer/footer";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
+import Table from "../table/table";
+import Counter from '../counter/counter'
 import "antd/dist/antd.css";
 
 class BasicRoute extends Component {
@@ -29,7 +31,7 @@ class BasicRoute extends Component {
     }
     render() {
         const {
-            Header, Footer, Sider, Content,
+             Sider, Content,
         } = Layout;
         let layoutRouter = (
             <div>
@@ -40,6 +42,9 @@ class BasicRoute extends Component {
                             <ul>
                                 <li>
                                     <Link to="/">index</Link>
+                                </li>
+                                <li>
+                                    <Link to="/table">table</Link>
                                 </li>
                                 <li>
                                     <Link to="/details">details</Link>
@@ -59,8 +64,10 @@ class BasicRoute extends Component {
                             <div>变化区域↓</div>
                             <Switch>
                                 <Route exact path="/" component={Index} />
+                                <Route exact path="/table" component={Table} />
                                 <Route exact path="/details" component={Details} />
                                 <Route exact path="/state" component={State} />
+                                <Route exact path="/counter" component={Counter} />
                                 <Route component={NotFound}/>
                             </Switch>
                         </Content>
